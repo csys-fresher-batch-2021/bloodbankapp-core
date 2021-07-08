@@ -230,7 +230,7 @@ B005      	E001	      08-12-19
 
 SELECT b.donor_id,d.blood_type,b.blood_quantity
 FROM blood b,donor d
-where b.donor_id=d.dnor_id;
+where b.donor_id=d.donor_id;
 
 DONOR_ID   BLOOD_TYPE   BLOOD_QUANTITY
 --------------------------------------
