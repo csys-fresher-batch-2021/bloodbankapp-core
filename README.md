@@ -47,6 +47,21 @@ insert into donor values('DOO2','Aiman','O+','No 13:Vedhachalam nagar coimbatore
 insert into donor values('DOO1','Sarah','O-','No 4:Ponniamman nagar trichy','sarah@gmail.com',9150078986,1,'05-05-2020');
 insert into donor values('DOO6','Daniel','B-','No 5:Greens garden nagercoil','nial@gmail.com',9004766556,1,'09-01-2021');
 ```
+### To check the donor can donate or not using procedure
+```sql
+create or replace procedure tocheckdonarcandonate_hem_h
+as
+cursor c1 is select last_donated_on from donor_hem;
+begin
+for i in c1 loop
+if i.last_donated_on between sysdate-93 and sysdate then
+dbms_output.put_line('you cannot donate');
+else
+dbms_output.put_line('you can donate');
+end if;
+end loop;
+end;
+```
 
 ### SELECTION AND PROJECTION:
 
