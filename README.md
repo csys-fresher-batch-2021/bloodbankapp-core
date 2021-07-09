@@ -11,7 +11,8 @@ blood_type varchar2(7),
 donor_address varchar2(50),
 donor_email varchar2(30),
 donor_phone_no number,
-active number not null default 1
+active number not null default 1,
+last_donated_on date
 );
 ```
 ### INSERT DATA OF DONOR
