@@ -209,37 +209,15 @@ SELECT count(patient_id),sum(quantity) from bloodpatient where blood_date like '
 ```sql
 SELECT blood_type,count(patient_id) from patient group by blood_type;
 ```
-BLOOD_TYPE     COUNT(PATIENT_ID)
---------------------------------
-O+	            1
-A+             1
-O-	            2
-B-	            1
-AB-	           1
-
-
 #### .Display donors name,address and phone number that have 'O-' blood type in order.
 ```sql
 SELECT blood_type,donor_name,donor_address,donor_phone_no from donor where blood_type='O-' order by donor_name;
 ```
-BLOOD_TYE   DONOR_NAME   DONOR_ADDRESS               DONOR_PHONE_NO
--------------------------------------------------------------------
-O-	        Amira	No     9:Tnagar chennai	           9659766006
-O-	        Sarah	No     4:Ponniamman nagar trichy	  9150078986
-
 
 #### .Display list of branch number,event id and dates from earliest to recent date.
 ```sql
 SELECT branch_no,event_id,event_date from blooddonevent order by event_date;
 ```
-BRANCH_NO   EVENT_ID    EVENT_DATE
-----------------------------------
-B002	      E004       	09-03-19
-B006	      E002	       22-03-19
-B004	      E003	       24-05-19
-B001	      E006	       06-07-19
-B005	      E005	       19-08-19
-B005      	E001	       08-12-19
 
 #### .Display donor id,blood type and quantity of blood donated.
 ```sql
@@ -247,12 +225,4 @@ SELECT b.donor_id,d.blood_type,b.blood_quantity
 FROM blood b,donor d
 where b.donor_id=d.donor_id;
 ```
-DONOR_ID   BLOOD_TYPE   BLOOD_QUANTITY
---------------------------------------
-DOO3	     A+          	1
-DOO4	     AB-	         1
-DOO5	     O-	          1
-DOO2	     O+         	 2
-DOO1	     O-          	2
-DOO6	     B-          	1
 
