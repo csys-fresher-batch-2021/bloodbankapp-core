@@ -18,19 +18,19 @@ last_donated_on date
 ### INSERT DATA OF DONOR
 
 ```sql
-insert into donor values('DOO3','Asyraff','A+','No 1:MK COMPLEX kanchipuram','asraf08@gmail.com',9899766556);
-insert into donor values('DOO4','Aina','AB-','No 49:Pallavan nagar chennai','aina@gmail.com',7899766556);
-insert into donor values('DOO5','Amira','O-','No 9:Tnagar chennai','mira124@gmail.com',9659766006);
-insert into donor values('DOO2','Aiman','O+','No 13:Vedhachalam nagar coimbatore','aiman11@gmail.com',6888766536);
-insert into donor values('DOO1','Sarah','O-','No 4:Ponniamman nagar trichy','sarah@gmail.com',9150078986);
-insert into donor values('DOO6','Daniel','B-','No 5:Greens garden nagercoil','nial@gmail.com',9004766556);
+insert into donor values('DOO3','Asyraff','A+','No 1:MK COMPLEX kanchipuram','asraf08@gmail.com',9899766556,1,'20-05-2020');
+insert into donor values('DOO4','Aina','AB-','No 49:Pallavan nagar chennai','aina@gmail.com',7899766556,1,'13-09-2021');
+insert into donor values('DOO5','Amira','O-','No 9:Tnagar chennai','mira124@gmail.com',9659766006,1,'21-03-2019');
+insert into donor values('DOO2','Aiman','O+','No 13:Vedhachalam nagar coimbatore','aiman11@gmail.com',6888766536,1,'05-02-2021');
+insert into donor values('DOO1','Sarah','O-','No 4:Ponniamman nagar trichy','sarah@gmail.com',9150078986,1,'05-05-2020');
+insert into donor values('DOO6','Daniel','B-','No 5:Greens garden nagercoil','nial@gmail.com',9004766556,1,09-08-2021);
 ```
 
 ### SELECTION AND PROJECTION:
 
-#### .Display the name and mobile number of donor whose name start with D
+#### .Display the name and mobile number of donor with blood_type is 'O+'.
 ```sql
-SELECT donor_name,donor_phone_no from donor where donor_name like 'D%';
+SELECT donor_name,donor_phone_no from donor where blood_type = 'O+';
 ```
 ### PATIENT INFORMATION TABLE
 ```sql
@@ -58,12 +58,7 @@ insert into patient values('POO2','Nadhirah','AB-','No 58 tuticorin','nanad11@gm
 #### .Display the information of all patients who has a type of blood O-.
 ```sql
 SELECT * from patient where blood_type='O-';
-```
-PATIENT_ID  PATIENT_NAME  BLOOD_TYPE   PATIENT_ADDRESS                              PATIENT_EMAIL     PATIENT_PHONE_NO    
------------------------------------------------------------------------------------------------------------------------
- POO6     	Aniq	          O-	           No 2:subash chandra bose street villupuram  	aniq7@yahoo.com	  9894528445
- POO3	      Yusri	        O-	         No 98:Adyar chennai	                        yuss04@gmail.com	9922089333
- 
+``` 
 ### BLOOD DONATION INFORMATION TABLE
 ```sql
 create table blood
@@ -111,10 +106,6 @@ insert into blooddonevent values('E006','B001','06-JUL-2019');
 ```sql
 SELECT donor_id from blood where event_id='E005';
 ```
-DONOR_ID
---------
- DOO6
- 
  
 ### BRANCH INFORMATION TABLE
 
@@ -142,10 +133,6 @@ insert into branch values('B006','Adhavan street','tuticorin',628001);
 ```sql
 SELECT street,city,postcode from branch where branch_no='B004';
 ```
-STREET               CITY        POSTCODE
------------------------------------------
-Ponniamman street	   chennai	   600002
-
 
 ### BLOOD RECEIVED PATIENT INFORMATION TABLE
 
@@ -175,18 +162,11 @@ insert into bloodpatient values('POO5','BL05','24-JUL-2019',1);
 ```sql
 SELECT count(blood_id) from bloodpatient where quantity>1;
 ```
-COUNT(BLOOD_ID)
----------------
-1
 
 #### .Display number of patients received blood in august and the sum of quantity.
 ```sql
 SELECT count(patient_id),sum(quantity) from bloodpatient where blood_date like '%8%';
 ```
-COUNT(PATIENT_ID)     SUM(QUANTITY)
------------------------------------
-2	                    2
-
 
 #### .Display the number of patients in each bloodtype.
 ```sql
