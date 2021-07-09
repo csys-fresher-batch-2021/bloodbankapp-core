@@ -1,6 +1,10 @@
 # Project Features
 ## Project title:  Blood bank app 
 
+### Blood Type table
+
+```sql
+create 
 ### Donor information table
 ```sql
 create table donor
