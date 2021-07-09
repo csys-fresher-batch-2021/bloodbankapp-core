@@ -23,7 +23,7 @@ insert into donor values('DOO4','Aina','AB-','No 49:Pallavan nagar chennai','ain
 insert into donor values('DOO5','Amira','O-','No 9:Tnagar chennai','mira124@gmail.com',9659766006,1,'21-03-2019');
 insert into donor values('DOO2','Aiman','O+','No 13:Vedhachalam nagar coimbatore','aiman11@gmail.com',6888766536,1,'05-02-2021');
 insert into donor values('DOO1','Sarah','O-','No 4:Ponniamman nagar trichy','sarah@gmail.com',9150078986,1,'05-05-2020');
-insert into donor values('DOO6','Daniel','B-','No 5:Greens garden nagercoil','nial@gmail.com',9004766556,1,09-08-2021);
+insert into donor values('DOO6','Daniel','B-','No 5:Greens garden nagercoil','nial@gmail.com',9004766556,1,'09-08-2021');
 ```
 
 ### SELECTION AND PROJECTION:
