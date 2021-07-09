@@ -4,7 +4,23 @@
 ### Blood Type table
 
 ```sql
-create 
+create table bloodType
+(
+blood_id varchar2(7) primary key,
+blood_type varchar2(7)
+);
+```
+### Insert data of bloodtype
+```sql
+insert into bloodtype values('BL01','O+');
+insert into bloodtype values('BL02','O-');
+insert into bloodtype values('BL03','A+');
+insert into bloodtype values('BL04','A-');
+insert into bloodtype values('BL05','B+');
+insert into bloodtype values('BLO6','AB-');
+insert into bloodtype values('BLO7','AB+');
+```
+
 ### Donor information table
 ```sql
 create table donor
@@ -16,7 +32,8 @@ donor_address varchar2(50),
 donor_email varchar2(30),
 donor_phone_no number,
 active number not null default 1,
-last_donated_on date
+last_donated_on date,
+constraint cons_fk10 foreign key(blood_type) references bloodtype(blood_type)
 );
 ```
 ### INSERT DATA OF DONOR
