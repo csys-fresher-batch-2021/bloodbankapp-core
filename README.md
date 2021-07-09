@@ -1,5 +1,5 @@
 # Project Features
-## Project title:  Blood bank app
+## Project title:  Blood bank app project
 
 ### Donor information table
 ```sql
