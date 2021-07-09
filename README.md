@@ -19,6 +19,7 @@ insert into bloodtype values('BL04','A-');
 insert into bloodtype values('BL05','B+');
 insert into bloodtype values('BL06','AB-');
 insert into bloodtype values('BL07','AB+');
+insert into bloodtype values('BL08','B-');
 ```
 
 ### Donor information table
@@ -31,7 +32,7 @@ blood_type varchar2(7),
 donor_address varchar2(50),
 donor_email varchar2(30),
 donor_phone_no number,
-active number not null default 1,
+active number not null,
 last_donated_on date,
 constraint cons_fk10 foreign key(blood_type) references bloodtype(blood_type)
 );
@@ -40,11 +41,11 @@ constraint cons_fk10 foreign key(blood_type) references bloodtype(blood_type)
 
 ```sql
 insert into donor values('DOO3','Asyraff','A+','No 1:MK COMPLEX kanchipuram','asraf08@gmail.com',9899766556,1,'20-05-2020');
-insert into donor values('DOO4','Aina','AB-','No 49:Pallavan nagar chennai','aina@gmail.com',7899766556,1,'13-09-2021');
+insert into donor values('DOO4','Aina','AB-','No 49:Pallavan nagar chennai','aina@gmail.com',7899766556,1,'13-09-2020');
 insert into donor values('DOO5','Amira','O-','No 9:Tnagar chennai','mira124@gmail.com',9659766006,1,'21-03-2019');
 insert into donor values('DOO2','Aiman','O+','No 13:Vedhachalam nagar coimbatore','aiman11@gmail.com',6888766536,1,'05-02-2021');
 insert into donor values('DOO1','Sarah','O-','No 4:Ponniamman nagar trichy','sarah@gmail.com',9150078986,1,'05-05-2020');
-insert into donor values('DOO6','Daniel','B-','No 5:Greens garden nagercoil','nial@gmail.com',9004766556,1,'09-08-2021');
+insert into donor values('DOO6','Daniel','B-','No 5:Greens garden nagercoil','nial@gmail.com',9004766556,1,'09-01-2021');
 ```
 
 ### SELECTION AND PROJECTION:
