@@ -1,7 +1,7 @@
 # Project Features
 ##Project title:  Blood bank app
 
-###donor information table###
+###donor information table
 ```sql
 create table donor
 (
@@ -12,7 +12,7 @@ donor_address varchar2(50),
 donor_email varchar2(30),
 donor_phone_no number
 );
-```sql
+```
 /INSERT DATA OF DONOR/
 
 insert into donor values('DOO3','Asyraff','A+','No 1:MK COMPLEX kanchipuram','asraf08@gmail.com',9899766556);
