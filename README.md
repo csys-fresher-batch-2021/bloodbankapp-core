@@ -15,13 +15,14 @@ donor_phone_no number
 ```
 /INSERT DATA OF DONOR/
 
+```sql
 insert into donor values('DOO3','Asyraff','A+','No 1:MK COMPLEX kanchipuram','asraf08@gmail.com',9899766556);
 insert into donor values('DOO4','Aina','AB-','No 49:Pallavan nagar chennai','aina@gmail.com',7899766556);
 insert into donor values('DOO5','Amira','O-','No 9:Tnagar chennai','mira124@gmail.com',9659766006);
 insert into donor values('DOO2','Aiman','O+','No 13:Vedhachalam nagar coimbatore','aiman11@gmail.com',6888766536);
 insert into donor values('DOO1','Sarah','O-','No 4:Ponniamman nagar trichy','sarah@gmail.com',9150078986);
 insert into donor values('DOO6','Daniel','B-','No 5:Greens garden nagercoil','nial@gmail.com',9004766556);
-
+```sql
 
 SELECTION AND PROJECTION:
 =========================
