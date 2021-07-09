@@ -6,8 +6,8 @@
 ```sql
 create table bloodType
 (
-blood_id varchar2(7) primary key,
-blood_type varchar2(7)
+blood_id varchar2(7),
+blood_type varchar2(7) primary key
 );
 ```
 ### Insert data of bloodtype
@@ -17,8 +17,8 @@ insert into bloodtype values('BL02','O-');
 insert into bloodtype values('BL03','A+');
 insert into bloodtype values('BL04','A-');
 insert into bloodtype values('BL05','B+');
-insert into bloodtype values('BLO6','AB-');
-insert into bloodtype values('BLO7','AB+');
+insert into bloodtype values('BL06','AB-');
+insert into bloodtype values('BL07','AB+');
 ```
 
 ### Donor information table
