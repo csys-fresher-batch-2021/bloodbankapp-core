@@ -10,7 +10,8 @@ donor_name varchar2(20),
 blood_type varchar2(7),
 donor_address varchar2(50),
 donor_email varchar2(30),
-donor_phone_no number
+donor_phone_no number,
+active number not null default 1
 );
 ```
 ### INSERT DATA OF DONOR
