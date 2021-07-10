@@ -21,6 +21,11 @@ insert into bloodtype values('BL06','AB-');
 insert into bloodtype values('BL07','AB+');
 insert into bloodtype values('BL08','B-');
 ```
+### List all bloodtype
+
+```sql
+select blood_type from bloodtype;
+```
 
 ### Donor information table
 ```sql
@@ -51,7 +56,7 @@ insert into donor values('DOO6','Daniel','B-','No 5:Greens garden nagercoil','ni
 ```sql
 create or replace procedure tocheckdonarcandonate_hem_h
 as
-cursor c1 is select last_donated_on from donor_hem;
+cursor c1 is select last_donated_on from donor;
 begin
 for i in c1 loop
 if i.last_donated_on between sysdate-93 and sysdate then
