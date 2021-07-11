@@ -1,6 +1,32 @@
 # Project Features
 ## Project title:  Blood bank app project
 
+### Blood Type table
+
+```sql
+create table bloodType
+(
+blood_id varchar2(7),
+blood_type varchar2(7) primary key
+);
+```
+### Insert data of bloodtype
+```sql
+insert into bloodtype values('BL01','O+');
+insert into bloodtype values('BL02','O-');
+insert into bloodtype values('BL03','A+');
+insert into bloodtype values('BL04','A-');
+insert into bloodtype values('BL05','B+');
+insert into bloodtype values('BL06','AB-');
+insert into bloodtype values('BL07','AB+');
+insert into bloodtype values('BL08','B-');
+```
+### List all bloodtype
+
+```sql
+select blood_type from bloodtype;
+```
+
 ### Donor information table
 ```sql
 create table donor
@@ -10,25 +36,43 @@ donor_name varchar2(20),
 blood_type varchar2(7),
 donor_address varchar2(50),
 donor_email varchar2(30),
-donor_phone_no number
+donor_phone_no number,
+active number not null,
+last_donated_on date,
+constraint cons_fk10 foreign key(blood_type) references bloodtype(blood_type)
 );
 ```
 ### INSERT DATA OF DONOR
 
 ```sql
-insert into donor values('DOO3','Asyraff','A+','No 1:MK COMPLEX kanchipuram','asraf08@gmail.com',9899766556);
-insert into donor values('DOO4','Aina','AB-','No 49:Pallavan nagar chennai','aina@gmail.com',7899766556);
-insert into donor values('DOO5','Amira','O-','No 9:Tnagar chennai','mira124@gmail.com',9659766006);
-insert into donor values('DOO2','Aiman','O+','No 13:Vedhachalam nagar coimbatore','aiman11@gmail.com',6888766536);
-insert into donor values('DOO1','Sarah','O-','No 4:Ponniamman nagar trichy','sarah@gmail.com',9150078986);
-insert into donor values('DOO6','Daniel','B-','No 5:Greens garden nagercoil','nial@gmail.com',9004766556);
+insert into donor values('DOO3','Asyraff','A+','No 1:MK COMPLEX kanchipuram','asraf08@gmail.com',9899766556,1,'20-05-2020');
+insert into donor values('DOO4','Aina','AB-','No 49:Pallavan nagar chennai','aina@gmail.com',7899766556,1,'13-09-2020');
+insert into donor values('DOO5','Amira','O-','No 9:Tnagar chennai','mira124@gmail.com',9659766006,1,'21-03-2019');
+insert into donor values('DOO2','Aiman','O+','No 13:Vedhachalam nagar coimbatore','aiman11@gmail.com',6888766536,1,'05-02-2021');
+insert into donor values('DOO1','Sarah','O-','No 4:Ponniamman nagar trichy','sarah@gmail.com',9150078986,1,'05-05-2020');
+insert into donor values('DOO6','Daniel','B-','No 5:Greens garden nagercoil','nial@gmail.com',9004766556,1,'09-01-2021');
+```
+### To check the donor can donate or not using procedure
+```sql
+create or replace procedure tocheckdonarcandonate_hem_h
+as
+cursor c1 is select last_donated_on from donor;
+begin
+for i in c1 loop
+if i.last_donated_on between sysdate-93 and sysdate then
+dbms_output.put_line('you cannot donate');
+else
+dbms_output.put_line('you can donate');
+end if;
+end loop;
+end;
 ```
 
 ### SELECTION AND PROJECTION:
 
-#### .Display the name and mobile number of donor whose name start with D
+#### .Display the name and mobile number of donor with blood_type is 'O+'.
 ```sql
-SELECT donor_name,donor_phone_no from donor where donor_name like 'D%';
+SELECT donor_name,donor_phone_no from donor where blood_type = 'O+';
 ```
 ### PATIENT INFORMATION TABLE
 ```sql
@@ -56,12 +100,7 @@ insert into patient values('POO2','Nadhirah','AB-','No 58 tuticorin','nanad11@gm
 #### .Display the information of all patients who has a type of blood O-.
 ```sql
 SELECT * from patient where blood_type='O-';
-```
-PATIENT_ID  PATIENT_NAME  BLOOD_TYPE   PATIENT_ADDRESS                              PATIENT_EMAIL     PATIENT_PHONE_NO    
------------------------------------------------------------------------------------------------------------------------
- POO6     	Aniq	          O-	           No 2:subash chandra bose street villupuram  	aniq7@yahoo.com	  9894528445
- POO3	      Yusri	        O-	         No 98:Adyar chennai	                        yuss04@gmail.com	9922089333
- 
+``` 
 ### BLOOD DONATION INFORMATION TABLE
 ```sql
 create table blood
@@ -109,10 +148,6 @@ insert into blooddonevent values('E006','B001','06-JUL-2019');
 ```sql
 SELECT donor_id from blood where event_id='E005';
 ```
-DONOR_ID
---------
- DOO6
- 
  
 ### BRANCH INFORMATION TABLE
 
@@ -140,10 +175,6 @@ insert into branch values('B006','Adhavan street','tuticorin',628001);
 ```sql
 SELECT street,city,postcode from branch where branch_no='B004';
 ```
-STREET               CITY        POSTCODE
------------------------------------------
-Ponniamman street	   chennai	   600002
-
 
 ### BLOOD RECEIVED PATIENT INFORMATION TABLE
 
@@ -173,54 +204,25 @@ insert into bloodpatient values('POO5','BL05','24-JUL-2019',1);
 ```sql
 SELECT count(blood_id) from bloodpatient where quantity>1;
 ```
-COUNT(BLOOD_ID)
----------------
-1
 
 #### .Display number of patients received blood in august and the sum of quantity.
 ```sql
 SELECT count(patient_id),sum(quantity) from bloodpatient where blood_date like '%8%';
 ```
-COUNT(PATIENT_ID)     SUM(QUANTITY)
------------------------------------
-2	                    2
-
 
 #### .Display the number of patients in each bloodtype.
 ```sql
 SELECT blood_type,count(patient_id) from patient group by blood_type;
 ```
-BLOOD_TYPE     COUNT(PATIENT_ID)
---------------------------------
-O+	            1
-A+             1
-O-	            2
-B-	            1
-AB-	           1
-
-
 #### .Display donors name,address and phone number that have 'O-' blood type in order.
 ```sql
 SELECT blood_type,donor_name,donor_address,donor_phone_no from donor where blood_type='O-' order by donor_name;
 ```
-BLOOD_TYE   DONOR_NAME   DONOR_ADDRESS               DONOR_PHONE_NO
--------------------------------------------------------------------
-O-	        Amira	No     9:Tnagar chennai	           9659766006
-O-	        Sarah	No     4:Ponniamman nagar trichy	  9150078986
-
 
 #### .Display list of branch number,event id and dates from earliest to recent date.
 ```sql
 SELECT branch_no,event_id,event_date from blooddonevent order by event_date;
 ```
-BRANCH_NO   EVENT_ID    EVENT_DATE
-----------------------------------
-B002	      E004       	09-03-19
-B006	      E002	       22-03-19
-B004	      E003	       24-05-19
-B001	      E006	       06-07-19
-B005	      E005	       19-08-19
-B005      	E001	       08-12-19
 
 #### .Display donor id,blood type and quantity of blood donated.
 ```sql
@@ -228,6 +230,7 @@ SELECT b.donor_id,d.blood_type,b.blood_quantity
 FROM blood b,donor d
 where b.donor_id=d.donor_id;
 ```
+<<<<<<< HEAD
 DONOR_ID   BLOOD_TYPE   BLOOD_QUANTITY
 --------------------------------------
 DOO3	     A+          	 1
@@ -236,4 +239,6 @@ DOO5	     O-	             1
 DOO2	     O+         	 2
 DOO1	     O-            	 2
 DOO6	     B-          	 1
+=======
+>>>>>>> 763d10ae41c2f653f1830bc2101ca29caace6ec6
 
