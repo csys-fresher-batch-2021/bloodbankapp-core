@@ -230,10 +230,10 @@ where b.donor_id=d.donor_id;
 ```
 DONOR_ID   BLOOD_TYPE   BLOOD_QUANTITY
 --------------------------------------
-DOO3	     A+          	1
+DOO3	     A+          	 1
 DOO4	     AB-	         1
-DOO5	     O-	          1
+DOO5	     O-	             1
 DOO2	     O+         	 2
-DOO1	     O-          	2
-DOO6	     B-          	1
+DOO1	     O-            	 2
+DOO6	     B-          	 1
 
