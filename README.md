@@ -1,5 +1,5 @@
 # Project Features
-## Project title:  Blood bank app1
+## Project title:  Blood bank app
 
 ### Blood Type table
 
