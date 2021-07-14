@@ -10,7 +10,7 @@ blood_id varchar2(7),
 blood_type varchar2(7) primary key
 );
 ```
-### Insert data of bloodtypes
+### Insert data of bloodtype
 ```sql
 insert into bloodtype values('BL01','O+');
 insert into bloodtype values('BL02','O-');
