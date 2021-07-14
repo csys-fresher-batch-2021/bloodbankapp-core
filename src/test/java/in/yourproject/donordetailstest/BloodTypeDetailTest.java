@@ -1,4 +1,4 @@
-package com.hemalatha.test;
+package in.yourproject.donordetailstest;
 
 import in.yourproject.model.bloodtype.BloodTypeDetail;
 
