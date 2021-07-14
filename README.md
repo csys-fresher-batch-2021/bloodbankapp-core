@@ -1,5 +1,5 @@
 # Project Features
-## Project title:  Blood bank app 
+## Project title:  Blood bank app
 
 ### Blood Type table
 
@@ -10,7 +10,7 @@ blood_id varchar2(7),
 blood_type varchar2(7) primary key
 );
 ```
-### Insert data of bloodtype
+### Insert data of bloodtypes
 ```sql
 insert into bloodtype values('BL01','O+');
 insert into bloodtype values('BL02','O-');
