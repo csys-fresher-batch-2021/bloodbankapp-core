@@ -1,4 +1,4 @@
-package com.hemalatha.exception;
+package in.yourproject;
 
 public class DBException extends Exception{
 

@@ -1,7 +1,7 @@
-package in.yourproject.bloodtypedetail.dao;
+package in.yourproject;
 
 	import java.util.ArrayList;
-	import com.hemalatha.exception.DBException;
+	import in.yourproject.DBException;
 
 	import in.yourproject.model.bloodtype.BloodTypeDetail;
 

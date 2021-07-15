@@ -1,5 +1,5 @@
 
-package in.yourproject.model.bloodtype;
+package in.yourproject;
 
 public class BloodTypeDetail {
 	

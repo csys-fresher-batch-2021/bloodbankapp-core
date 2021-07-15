@@ -1,13 +1,12 @@
-package in.yourproject.bloodtypedetail.dao;
-import java.sql.Connection;
+package in.yourproject;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import in.yourproject.bloodtypedetail.dao.BloodTypeDetailDAO;
-import com.hemalatha.exception.DBException;
+import in.yourproject.DBException;
 import in.yourproject.model.bloodtype.BloodTypeDetail;
-import com.hemalatha.test.ConnectionUtilTest;
+import in.yourproject.donordetailstest.ConnectionUtilTest;
 
 public class BloodTypeDAOImpl implements BloodTypeDetailDAO {
 

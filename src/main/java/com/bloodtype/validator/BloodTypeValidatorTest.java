@@ -45,9 +45,9 @@ public class BloodTypeValidatorTest {
 	}
 
 	public static void main(String[] args) {
-		testCase1();
-		testCase2();
-		testCase3();
+		//testCase1();
+		//testCase2();
+		//testCase3();
 	}
 
 }

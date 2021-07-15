@@ -1,10 +1,10 @@
-package com.hemalatha.test;
+package in.yourproject.donordetailstest;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import com.hemalatha.exception.DBException;
+import in.yourproject.DBException;
 
 public class ConnectionUtilTest {
 	

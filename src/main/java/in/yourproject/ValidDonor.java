@@ -1,4 +1,4 @@
-package in.yourproject.model.donordetails;
+package in.yourproject;
 
 public class ValidDonor {
 	public static void main(String[] args) {
@@ -6,17 +6,8 @@ public class ValidDonor {
 		//input
 		String donorId = "DOO1";
 		String donorName = "";
-		//String bloodType= "";
-		String[] bloodType = new String[8];
-		bloodType[0]="O+";
-		bloodType[1]="O-";
-		bloodType[2]="A+";
-		bloodType[3]="A-";
-		bloodType[4]="B+";
-		bloodType[5]="B-";
-		bloodType[6]="AB+";
-		
-		
+		String bloodType= "";
+	
 		Long phoneNo=9897653101l;
 	    String phoneNumber= phoneNo.toString();
 		

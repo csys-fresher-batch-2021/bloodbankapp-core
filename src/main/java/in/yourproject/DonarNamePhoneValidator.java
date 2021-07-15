@@ -1,7 +1,7 @@
-package in.yourproject.model.donordetails;
+package in.yourproject;
 
 import in.yourproject.model.donordetails.DonorDetails;
-import com.hemalatha.exception.ValidationException;
+import in.yourproject.ValidationException;
 
 public class DonarNamePhoneValidator {
 	

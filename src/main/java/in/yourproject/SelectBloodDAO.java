@@ -1,4 +1,4 @@
-package in.yourproject.bloodtypedetail.dao;
+package in.yourproject;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

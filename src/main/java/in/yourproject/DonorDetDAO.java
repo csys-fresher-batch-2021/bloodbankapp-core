@@ -1,4 +1,4 @@
-package in.yourproject.bloodtypedetail.dao;
+package in.yourproject;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.DriverManager;
@@ -40,8 +40,8 @@ public class DonorDetDAO {
 				
 			
 				
-				String sql = "insert into donor_hem values ('" + donor_Name + "')";
-				//String sql = "insert into donor_hem values (?,?,?,?,?,?,?,?)";
+				//String sql = "insert into donor_hem values ('" + donor_Name + "')";
+				String sql = "insert into donor_hem values (?,?,?,?,?,?,?,?)";
 				
 				System.out.println(sql);
 				
