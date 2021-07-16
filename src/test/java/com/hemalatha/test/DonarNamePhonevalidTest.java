@@ -1,8 +1,7 @@
 package com.hemalatha.test;
 import java.time.LocalDate;
 
-import in.yourproject.model.bloodtype.BloodTypeDetail;
-import in.yourproject.model.donordetails.DonarNamePhoneValidator;
+import in.yourproject.DonarNamePhoneValidator;
 import in.yourproject.model.donordetails.DonorDetails;
 
 public class DonarNamePhonevalidTest {
