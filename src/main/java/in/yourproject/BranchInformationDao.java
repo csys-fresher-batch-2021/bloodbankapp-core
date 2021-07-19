@@ -16,12 +16,17 @@ public class BranchInformationDao {
 		Connection connection = DriverManager.getConnection(url, username, password);
 		System.out.println(connection);
 
-		String branchNo = "B007";
+				String branchNo = "B013";
 		String street = "Anna Nagar";
 		String city = "Chennai";
-		long postcode = 600006l;
+		Long postcode = 600006l;
+		String postalCode=postcode.toString();
+		
+		if (postalCode.length()==6) {
+			
 		String sql = "Insert into branch(Branch_no,Street,City,Postcode) values(?,?,?,?)";
 		System.out.println(sql);
+		
 		
 	PreparedStatement pst = connection.prepareStatement(sql);
 	pst.setString(1, branchNo);
@@ -34,6 +39,11 @@ public class BranchInformationDao {
 	connection.close();
 	
 	System.out.println("No of rows inserted :" + rows);
+	
+		}
+		else {
+			System.out.println("postal code not valid");
 	}
 
+}
 }
