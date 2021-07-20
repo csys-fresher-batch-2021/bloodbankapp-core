@@ -1,15 +1,21 @@
 package in.yourproject.bloodtypedetail.dao;
 	
-	import java.util.ArrayList;
-    
-	import in.yourproject.model.bloodtype.BloodTypeDetail;
+import java.util.List;
+
+import in.yourproject.model.bloodtype.BloodTypeDetail;
 
 	public interface BloodTypeDetailDAO {
 	
-			ArrayList<BloodTypeDetail> findAll() throws Exception;
+			List<BloodTypeDetail> findAll() throws Exception;
 			
-			BloodTypeDetail findOne(String bloodType) throws Exception;
+			List<BloodTypeDetail> findOne(String bloodType) throws Exception;
 		}
+
+		
+		
+
+		
+
 
 		
 		
